@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import AddNewItem from "./container/AddNewItem";
+import AppContainer from "./container/AppContainer";
+import Card from "./container/Card";
+import Column from "./container/Column";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Column text="To Do">
+        <Card text="Build Pack"></Card>
+      </Column>
+      <Column text="In Progress">
+        <Card text="Learn TypeScript"></Card>
+      </Column>
+      <Column text="Done">
+        <Card text="Learning JS"></Card>
+      </Column>
+      <AddNewItem toggleButtonText="+ Add another Item" onAdd={console.log} />
+    </AppContainer>
   );
 }
 
