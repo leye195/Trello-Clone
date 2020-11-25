@@ -70,3 +70,12 @@ export const NewItemButton = styled.button`
     padding: 6px 12px;
     text-align: center;
 `;
+
+
+interface DragPreviewContainerProps {
+    isHidden?: boolean;
+}
+
+export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
+    opacity: ${props=>(props.isHidden?0.3:1)};
+`;
